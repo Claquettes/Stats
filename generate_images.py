@@ -37,7 +37,7 @@ async def generate_overview(s: Stats) -> None:
 
     output = re.sub("{{ name }}", await s.name, output)
     output = re.sub("{{ stars }}", f"{await s.stargazers:,}", output)
-    output = re.sub("{{ fourchettes }}", f"{await s.forks:,}", output)
+    output = re.sub("{{ forks }}", f"{await s.forks:,}", output)
     output = re.sub("{{ contributions }}", f"{await s.total_contributions:,}", output)
     changed = (await s.lines_changed)[0] + (await s.lines_changed)[1] 
     changed = changed - 1900000
